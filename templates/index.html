@@ -1,72 +1,119 @@
-<style>
-    .dashboard-container {
-        max-width: 1000px;
-        margin: 20px auto;
-        padding: 10px;
-    }
-    .dashboard-title {
-        background: #112233;
-        color: white;
-        padding: 10px 20px;
-        border-radius: 30px;
-        display: inline-block;
-        font-weight: bold;
-        margin-bottom: 20px;
-    }
-    .grid-box {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 15px;
-    }
-    .card-item {
-        background: white;
-        padding: 20px;
-        text-align: center;
-        border-radius: 10px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        text-decoration: none;
-        color: #333;
-        transition: 0.3s;
-        border-top: 4px solid #004085;
-    }
-    .card-item:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-    }
-    .card-item h3 {
-        margin: 10px 0 0 0;
-        font-size: 16px;
-        color: #004085;
-    }
-</style>
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest ITI & Govt Jobs Portal</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f6f9; margin: 0; padding: 0; }
+        
+        /* Top Navigation Bar */
+        .navbar { background: #1a2b4c; color: white; padding: 12px 20px; display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; font-weight: bold; font-size: 14px; }
+        .navbar a { color: white; text-decoration: none; padding: 5px 10px; }
+        .navbar a:hover { background: #004085; border-radius: 4px; }
 
-<div class="dashboard-container">
-    <div class="dashboard-title">📁 Recruitment Dashboard</div>
-    
-    <div class="grid-box">
-        <a href="#" class="card-item">
-            <h3>Latest Recruitment</h3>
-        </a>
-        <a href="#" class="card-item">
-            <h3>Railway Apprentice</h3>
-        </a>
-        <a href="#" class="card-item">
-            <h3>Latest Apprentice</h3>
-        </a>
-        <a href="#" class="card-item">
-            <h3>Latest Campus Placement</h3>
-        </a>
-        <a href="#" class="card-item">
-            <h3>Merit List / Result</h3>
-        </a>
-        <a href="#" class="card-item">
-            <h3>Answer Key</h3>
-        </a>
-        <a href="#" class="card-item">
-            <h3>Admit Card</h3>
-        </a>
-        <a href="#" class="card-item">
-            <h3>Syllabus</h3>
-        </a>
+        /* Main Content Layout (Notice Board + Courses) */
+        .main-wrapper { max-width: 1100px; margin: 20px auto; display: flex; flex-wrap: wrap; gap: 20px; padding: 0 10px; }
+        .notice-section { flex: 2; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .sidebar-section { flex: 1; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        
+        .section-title { font-size: 18px; color: #1a2b4c; font-weight: bold; margin-bottom: 15px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+        .notice-item { padding: 12px 0; border-bottom: 1px solid #f0f0f0; color: #333; font-size: 15px; }
+
+        /* Scrollable Recruitment Dashboard Section */
+        .dashboard-container { max-width: 1100px; margin: 30px auto; padding: 0 10px 40px 10px; }
+        .dashboard-badge { background: #1a2b4c; color: white; padding: 8px 20px; border-radius: 20px; display: inline-block; font-weight: bold; margin-bottom: 15px; font-size: 16px; }
+        .grid-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; }
+        .card-item { background: white; padding: 20px; text-align: center; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.08); text-decoration: none; color: #333; transition: 0.2s; border-top: 4px solid #1a2b4c; }
+        .card-item:hover { transform: translateY(-3px); box-shadow: 0 5px 12px rgba(0,0,0,0.12); background: #fafbfc; }
+        .card-item h3 { margin: 8px 0 0 0; font-size: 15px; color: #1a2b4c; }
+
+        footer { text-align: center; padding: 20px; background: #1a2b4c; color: white; margin-top: 40px; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+    <!-- Top Menu -->
+    <div class="navbar">
+        <a href="#">🏠 HOME</a>
+        <a href="#">GROUP D MOCK TEST</a>
+        <a href="#">CAREER</a>
+        <a href="#">EXAM PAPER</a>
+        <a href="#">ITI UPDATES</a>
+        <a href="#">ANSWER KEY</a>
+        <a href="#">ADMIT CARD</a>
+        <a href="#">RESULT</a>
+        <a href="#">APPRENTICE NEWS</a>
     </div>
-</div>
+
+    <!-- Top Section: Notice Board & Courses -->
+    <div class="main-wrapper">
+        <!-- Notice Board -->
+        <div class="notice-section">
+            <div class="section-title">📢 Notice Board</div>
+            <div class="notice-item">AVNL Answer Key 2026 Official Out</div>
+            <div class="notice-item">ISRO SDSC Answer key 2026 Out</div>
+            <div class="notice-item">ISRO IPRC Recruitment 2026 Full Notification Out</div>
+            <div class="notice-item">ISRO ISTRAC Admit Card 2026</div>
+            <div class="notice-item">MECL Non Executive Recruitment 2026 Out</div>
+        </div>
+
+        <!-- Download Courses Box (As it is) -->
+        <div class="sidebar-section">
+            <div class="section-title">📖 Download Courses</div>
+            <p style="font-size: 14px; color: #555;"><b>Courses:</b> CITS, Railway, ISRO, ITI Competitive (DFCCIL, etc.)</p>
+            <p style="font-size: 14px; color: #555;"><b>Features:</b> Full Mock Tests, Previous PDFs (Hindi & English)</p>
+            <p style="font-size: 14px; color: #555;"><b>Course Fee:</b> ₹49 to ₹199</p>
+        </div>
+    </div>
+
+    <!-- Bottom Section: Recruitment Dashboard (Appears on Scroll) -->
+    <div class="dashboard-container">
+        <div class="dashboard-badge">📁 Recruitment Dashboard</div>
+        
+        <div class="grid-box">
+            <a href="#" class="card-item">
+                <h3>Latest Recruitment</h3>
+            </a>
+            <a href="#" class="card-item">
+                <h3>Railway Apprentice</h3>
+            </a>
+            <a href="#" class="card-item">
+                <h3>Latest Apprentice</h3>
+            </a>
+            <a href="#" class="card-item">
+                <h3>Latest Campus Placement</h3>
+            </a>
+            <a href="#" class="card-item">
+                <h3>Merit List / Result</h3>
+            </a>
+            <a href="#" class="card-item">
+                <h3>Answer Key</h3>
+            </a>
+            <a href="#" class="card-item">
+                <h3>Admit Card</h3>
+            </a>
+            <a href="#" class="card-item">
+                <h3>Syllabus</h3>
+            </a>
+            <a href="#" class="card-item">
+                <h3>Exam Books</h3>
+            </a>
+            <a href="#" class="card-item">
+                <h3>Admissions</h3>
+            </a>
+            <a href="#" class="card-item">
+                <h3>Cut Off</h3>
+            </a>
+            <a href="#" class="card-item">
+                <h3>Upcoming Vacancies</h3>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Latest Govt Jobs Portal. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
