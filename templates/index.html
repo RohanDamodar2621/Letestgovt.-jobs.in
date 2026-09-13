@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Govt Jobs - ITI & Technical Vacancies</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f6f9; margin: 0; padding: 0; }
+        header { background-color: #1a365d; color: white; padding: 20px; text-align: center; }
+        .container { max-width: 900px; margin: 20px auto; padding: 10px; }
+        .job-card { background: white; padding: 20px; margin-bottom: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border-left: 5px solid #3182ce; }
+        .job-title { font-size: 20px; color: #2d3748; margin-bottom: 5px; font-weight: bold; }
+        .job-dept { color: #4a5568; font-size: 14px; margin-bottom: 10px; }
+        .job-info { font-size: 14px; color: #718096; margin-bottom: 15px; }
+        .btn { background-color: #3182ce; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; font-size: 14px; display: inline-block; }
+        .btn:hover { background-color: #2b6cb0; }
+        footer { text-align: center; padding: 15px; color: #a0aec0; font-size: 13px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Latest Govt Jobs</h1>
+        <p>ITI & Technical Apprenticeship Portal</p>
+    </header>
+
+    <div class="container">
+        <h2>ताज्या सरकारी आणि ITI नोकऱ्या</h2>
+        
+        {% for job in jobs %}
+        <div class="job-card">
+            <div class="job-title">{{ job.title }}</div>
+            <div class="job-dept"><b>विभाग:</b> {{ job.department }}</div>
+            <div class="job-info">
+                <div><b>पात्रता:</b> {{ job.qualification }}</div>
+                <div><b>शेवटची तारीख:</b> {{ job.last_date }}</div>
+            </div>
+            <a href="{{ job.link }}" class="btn">सविस्तर माहिती व अर्ज</a>
+        </div>
+        {% endfor %}
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Latest Govt Jobs Portal. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
