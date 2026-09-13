@@ -2,37 +2,37 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-# डमी जॉब लिस्ट (पुढे आपण हे डेटाबेसवरून घेऊ शकतो)
-JOBS = [
+# डमी जॉब्सची यादी (पुढे जाऊन आपण हे डेटाबेसवरून घेऊ शकतो)
+jobs_list = [
     {
         "id": 1,
         "title": "ITI Railway Apprentice Recruitment 2026",
-        "department": "Indian Railways (Konkan / Central Railway)",
-        "qualification": "ITI Passed (Tractor Mechanic, Fitter, Electrician, Welder)",
+        "department": "Indian Railways",
+        "qualification": "ITI Pass (Fitter / Electrician / Welder)",
         "last_date": "30 Sept 2026",
         "link": "#"
     },
     {
         "id": 2,
         "title": "Mahagenco Technician-3 Vacancy",
-        "department": "Maharashtra State Power Generation Co. Ltd.",
-        "qualification": "ITI Electrical / Mechanical",
+        "department": "Mahagenco (महानिर्मिती)",
+        "qualification": "ITI Electrical / Wireman",
         "last_date": "15 Oct 2026",
         "link": "#"
     },
     {
         "id": 3,
-        "title": "John Deere & CNH Assembly Shop Trainee",
-        "department": "Private / Multinational Sector",
-        "qualification": "ITI Tractor Mechanic / Diesel Mechanic",
-        "last_date": "Running",
+        "title": "Konkan Railway S&T Maintenance Posts",
+        "department": "Konkan Railway",
+        "qualification": "ITI Electronics / Electrical",
+        "last_date": "25 Sept 2026",
         "link": "#"
     }
 ]
 
 @app.route('/')
 def home():
-    return render_template('index.html', jobs=JOBS)
+    return render_template('index.html', jobs=jobs_list)
 
 if __name__ == '__main__':
     app.run(debug=True)
