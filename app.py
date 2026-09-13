@@ -25,6 +25,7 @@ class JobPost(db.Model):
     category = db.Column(db.String(50), default="Notice")
 
 with app.app_context():
+    db.drop_all()
     db.create_all()
 
 @app.route('/')
