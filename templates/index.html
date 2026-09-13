@@ -5,28 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Latest ITI & Govt Jobs Portal</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #f4f6f9; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f0f2f5; margin: 0; padding: 0; }
         
         /* Top Navigation Bar */
-        .navbar { background: #1a2b4c; color: white; padding: 12px 20px; display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; font-weight: bold; font-size: 14px; }
+        .navbar { background: #1a2b4c; color: white; padding: 12px 20px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; font-weight: bold; font-size: 13px; }
         .navbar a { color: white; text-decoration: none; padding: 5px 10px; }
         .navbar a:hover { background: #004085; border-radius: 4px; }
 
         /* Main Content Layout (Notice Board + Courses) */
-        .main-wrapper { max-width: 1100px; margin: 20px auto; display: flex; flex-wrap: wrap; gap: 20px; padding: 0 10px; }
-        .notice-section { flex: 2; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        .sidebar-section { flex: 1; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .main-wrapper { max-width: 1100px; margin: 25px auto; display: flex; flex-wrap: wrap; gap: 20px; padding: 0 10px; }
+        .notice-section { flex: 2; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid #d1d9e0; }
+        .sidebar-section { flex: 1; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid #d1d9e0; }
         
-        .section-title { font-size: 18px; color: #1a2b4c; font-weight: bold; margin-bottom: 15px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
-        .notice-item { padding: 12px 0; border-bottom: 1px solid #f0f0f0; color: #333; font-size: 15px; }
+        .section-title { font-size: 18px; color: #1a2b4c; font-weight: bold; margin-bottom: 15px; border-bottom: 2px solid #e1e4e8; padding-bottom: 8px; }
+        
+        /* Notice Board Row Styling */
+        .notice-item { 
+            background: #ffffff; 
+            padding: 14px 15px; 
+            margin-bottom: 10px; 
+            border-radius: 6px; 
+            border: 1px solid #cbd5e1; 
+            border-left: 4px solid #1a2b4c; 
+            color: #1f2937; 
+            font-size: 14px; 
+            font-weight: 600;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
 
-        /* Scrollable Recruitment Dashboard Section */
+        /* Recruitment Dashboard Section */
         .dashboard-container { max-width: 1100px; margin: 30px auto; padding: 0 10px 40px 10px; }
-        .dashboard-badge { background: #1a2b4c; color: white; padding: 8px 20px; border-radius: 20px; display: inline-block; font-weight: bold; margin-bottom: 15px; font-size: 16px; }
-        .grid-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; }
-        .card-item { background: white; padding: 20px; text-align: center; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.08); text-decoration: none; color: #333; transition: 0.2s; border-top: 4px solid #1a2b4c; }
-        .card-item:hover { transform: translateY(-3px); box-shadow: 0 5px 12px rgba(0,0,0,0.12); background: #fafbfc; }
-        .card-item h3 { margin: 8px 0 0 0; font-size: 15px; color: #1a2b4c; }
+        .dashboard-badge { 
+            background: #1e293b; 
+            color: white; 
+            padding: 10px 25px; 
+            border-radius: 30px; 
+            display: inline-block; 
+            font-weight: bold; 
+            margin-bottom: 20px; 
+            font-size: 16px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        
+        /* 3D Card Grid Layout */
+        .grid-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; }
+        .card-item { 
+            background: #ffffff; 
+            padding: 22px 15px; 
+            text-align: center; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.06); 
+            text-decoration: none; 
+            color: #1f2937; 
+            transition: all 0.25s ease-in-out; 
+            border: 1px solid #e2e8f0;
+            border-top: 4px solid #2563eb;
+        }
+        .card-item:hover { 
+            transform: translateY(-4px); 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12); 
+            background: #f8fafc; 
+        }
+        .card-item h3 { margin: 10px 0 0 0; font-size: 15px; color: #1e293b; font-weight: 700; }
 
         footer { text-align: center; padding: 20px; background: #1a2b4c; color: white; margin-top: 40px; font-size: 14px; }
     </style>
@@ -51,63 +91,39 @@
         <!-- Notice Board -->
         <div class="notice-section">
             <div class="section-title">📢 Notice Board</div>
-            <div class="notice-item">AVNL Answer Key 2026 Official Out</div>
-            <div class="notice-item">ISRO SDSC Answer key 2026 Out</div>
-            <div class="notice-item">ISRO IPRC Recruitment 2026 Full Notification Out</div>
-            <div class="notice-item">ISRO ISTRAC Admit Card 2026</div>
-            <div class="notice-item">MECL Non Executive Recruitment 2026 Out</div>
+            <div class="notice-item">🔹 AVNL Answer Key 2026 Official Out</div>
+            <div class="notice-item">🔹 ISRO SDSC Answer key 2026 Out</div>
+            <div class="notice-item">🔹 ISRO IPRC Recruitment 2026 Full Notification Out</div>
+            <div class="notice-item">🔹 ISRO ISTRAC Admit Card 2026</div>
+            <div class="notice-item">🔹 MECL Non Executive Recruitment 2026 Out</div>
         </div>
 
-        <!-- Download Courses Box (As it is) -->
+        <!-- Download Courses Box -->
         <div class="sidebar-section">
-            <div class="section-title">📖 Download Courses</div>
-            <p style="font-size: 14px; color: #555;"><b>Courses:</b> CITS, Railway, ISRO, ITI Competitive (DFCCIL, etc.)</p>
-            <p style="font-size: 14px; color: #555;"><b>Features:</b> Full Mock Tests, Previous PDFs (Hindi & English)</p>
-            <p style="font-size: 14px; color: #555;"><b>Course Fee:</b> ₹49 to ₹199</p>
+            <div class="section-title">📖 Download Anil Sir ITI App</div>
+            <p style="font-size: 13px; color: #475569;"><b>Courses:</b> CITS, Railway ALP, Technician, Group D, ISRO, ITI Competitive</p>
+            <p style="font-size: 13px; color: #475569;"><b>Features:</b> Full Mock Test, Section Test, Previous PDFs</p>
+            <p style="font-size: 13px; color: #475569;"><b>Course Fee:</b> ₹49 to ₹149</p>
         </div>
     </div>
 
-    <!-- Bottom Section: Recruitment Dashboard (Appears on Scroll) -->
+    <!-- Bottom Section: Recruitment Dashboard (Scrollable) -->
     <div class="dashboard-container">
         <div class="dashboard-badge">📁 Recruitment Dashboard</div>
         
         <div class="grid-box">
-            <a href="#" class="card-item">
-                <h3>Latest Recruitment</h3>
-            </a>
-            <a href="#" class="card-item">
-                <h3>Railway Apprentice</h3>
-            </a>
-            <a href="#" class="card-item">
-                <h3>Latest Apprentice</h3>
-            </a>
-            <a href="#" class="card-item">
-                <h3>Latest Campus Placement</h3>
-            </a>
-            <a href="#" class="card-item">
-                <h3>Merit List / Result</h3>
-            </a>
-            <a href="#" class="card-item">
-                <h3>Answer Key</h3>
-            </a>
-            <a href="#" class="card-item">
-                <h3>Admit Card</h3>
-            </a>
-            <a href="#" class="card-item">
-                <h3>Syllabus</h3>
-            </a>
-            <a href="#" class="card-item">
-                <h3>Exam Books</h3>
-            </a>
-            <a href="#" class="card-item">
-                <h3>Admissions</h3>
-            </a>
-            <a href="#" class="card-item">
-                <h3>Cut Off</h3>
-            </a>
-            <a href="#" class="card-item">
-                <h3>Upcoming Vacancies</h3>
-            </a>
+            <a href="#" class="card-item"><h3>Latest Recruitment</h3></a>
+            <a href="#" class="card-item"><h3>Railway Apprentice</h3></a>
+            <a href="#" class="card-item"><h3>Latest Apprentice</h3></a>
+            <a href="#" class="card-item"><h3>Latest Campus Placement</h3></a>
+            <a href="#" class="card-item"><h3>Merit List / Result</h3></a>
+            <a href="#" class="card-item"><h3>Answer Key</h3></a>
+            <a href="#" class="card-item"><h3>Admit Card</h3></a>
+            <a href="#" class="card-item"><h3>Syllabus</h3></a>
+            <a href="#" class="card-item"><h3>Exam Books</h3></a>
+            <a href="#" class="card-item"><h3>Admissions</h3></a>
+            <a href="#" class="card-item"><h3>Cut Off</h3></a>
+            <a href="#" class="card-item"><h3>Upcoming Vacancies</h3></a>
         </div>
     </div>
 
