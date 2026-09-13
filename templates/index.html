@@ -89,14 +89,16 @@
 
     <!-- Top Section: Notice Board & Courses -->
     <div class="main-wrapper">
-        <!-- Notice Board -->
+        <!-- Notice Board (Dynamic from Database) -->
         <div class="notice-section">
             <div class="section-title">📢 Notice Board</div>
-            <div class="notice-item">🔹 AVNL Answer Key 2026 Official Out</div>
-            <div class="notice-item">🔹 ISRO SDSC Answer key 2026 Out</div>
-            <div class="notice-item">🔹 ISRO IPRC Recruitment 2026 Full Notification Out</div>
-            <div class="notice-item">🔹 ISRO ISTRAC Admit Card 2026</div>
-            <div class="notice-item">🔹 MECL Non Executive Recruitment 2026 Out</div>
+            {% if notices %}
+                {% for notice in notices %}
+                <div class="notice-item">🔹 {{ notice.title }}</div>
+                {% endfor %}
+            {% else %}
+                <div class="notice-item" style="color: #777;">सध्या कोणतीही नवीन नोटीस नाही.</div>
+            {% endif %}
         </div>
 
         <!-- Download Courses Box -->
