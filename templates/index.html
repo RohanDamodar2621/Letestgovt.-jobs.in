@@ -3,46 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Latest Govt Jobs in - ITI & Railway Updates</title>
+    <title>Latest ITI & Govt Jobs Portal</title>
     <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f8fafc; margin: 0; padding: 0; color: #333; }
-        header { background: #1a2b4c; color: white; padding: 20px; text-align: center; }
-        .container { max-width: 900px; margin: 20px auto; padding: 15px; }
-        .notice-board { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        h2 { color: #1a2b4c; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; }
-        .job-card { background: #f8fafc; border-left: 4px solid #2563eb; padding: 15px; margin-bottom: 12px; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
-        .job-title { font-size: 18px; font-weight: bold; color: #1e3a8a; margin-bottom: 5px; }
-        .job-details { font-size: 13px; color: #475569; margin-bottom: 8px; }
-        .links a { display: inline-block; margin-right: 15px; background: #2563eb; color: white; padding: 5px 12px; text-decoration: none; border-radius: 4px; font-size: 12px; font-weight: bold; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f0f2f5; margin: 0; padding: 0; }
+        .navbar { background: #1a2b4c; color: white; padding: 12px 20px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; font-weight: bold; font-size: 13px; }
+        .navbar a { color: white; text-decoration: none; padding: 5px 10px; }
+        .navbar a:hover { background: #004085; border-radius: 4px; }
+        .main-wrapper { max-width: 1100px; margin: 25px auto; display: flex; flex-wrap: wrap; gap: 20px; padding: 0 10px; }
+        .notice-section { flex: 2; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid #d1d9e0; }
+        .sidebar-section { flex: 1; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid #d1d9e0; }
+        .section-title { font-size: 18px; color: #1a2b4c; font-weight: bold; margin-bottom: 15px; border-bottom: 2px solid #e1e4e8; padding-bottom: 8px; }
+        
+        /* डायनॅमिक जॉब कार्ड्स डिझाईन */
+        .job-card { background: #f8fafc; border-left: 4px solid #2563eb; padding: 12px 15px; margin-bottom: 12px; border-radius: 6px; border: 1px solid #cbd5e1; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+        .job-title { font-size: 15px; font-weight: 700; color: #1e3a8a; margin-bottom: 4px; }
+        .job-details { font-size: 12px; color: #475569; margin-bottom: 8px; }
+        .links a { display: inline-block; margin-right: 10px; background: #2563eb; color: white; padding: 4px 10px; text-decoration: none; border-radius: 4px; font-size: 11px; font-weight: bold; }
         .links a.apply { background: #16a34a; }
-        .links a:hover { opacity: 0.9; }
-        .admin-link { display: block; text-align: center; margin-top: 30px; color: #64748b; text-decoration: none; font-size: 14px; }
+
+        .dashboard-container { max-width: 1100px; margin: 30px auto; padding: 0 10px 40px 10px; }
+        .dashboard-badge { background: #1e293b; color: white; padding: 10px 25px; border-radius: 30px; display: inline-block; font-weight: bold; margin-bottom: 20px; font-size: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+        .grid-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; }
+        .card-item { background: #ffffff; padding: 22px 15px; text-align: center; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); text-decoration: none; color: #1f2937; transition: all 0.25s ease-in-out; border: 1px solid #e2e8f0; border-top: 4px solid #2563eb; }
+        .card-item:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); background: #f8fafc; }
+        .card-icon { font-size: 28px; margin-bottom: 8px; display: block; }
+        .card-item h3 { margin: 5px 0 0 0; font-size: 15px; color: #1e293b; font-weight: 700; }
+        footer { text-align: center; padding: 20px; background: #1a2b4c; color: white; margin-top: 40px; font-size: 14px; }
+        .admin-link { display: inline-block; margin-top: 15px; color: #2563eb; text-decoration: none; font-size: 13px; font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Latest Govt Jobs & ITI Updates</h1>
-        <p>रल्वे, ISRO आणि शासकीय नोकऱ्यांचे सर्व अपडेट्स एकाच ठिकाणी</p>
-    </header>
+    <div class="navbar">
+        <a href="/">🏠 HOME</a>
+        <a href="#">GROUP D MOCK TEST</a>
+        <a href="#">CAREER</a>
+        <a href="#">EXAM PAPER</a>
+        <a href="#">ITI UPDATES</a>
+        <a href="#">ANSWER KEY</a>
+        <a href="#">ADMIT CARD</a>
+        <a href="#">RESULT</a>
+        <a href="#">APPRENTICE NEWS</a>
+    </div>
 
-    <div class="container">
-        <div class="notice-board">
-            <h2>📢 Notice Board & Updates</h2>
+    <div class="main-wrapper">
+        <div class="notice-section">
+            <div class="section-title">📢 Notice Board & Updates</div>
             
             {% if jobs %}
                 {% for job in jobs %}
                 <div class="job-card">
-                    <div class="job-title">{{ job.title }}</div>
+                    <div class="job-title">🔹 {{ job.title }}</div>
                     <div class="job-details">
                         {% if job.organization %}<b>संस्था:</b> {{ job.organization }} | {% endif %}
                         {% if job.advt_no %}<b>जाहिरात क्र.:</b> {{ job.advt_no }} | {% endif %}
                         {% if job.total_vacancies %}<b>पदे:</b> {{ job.total_vacancies }} | {% endif %}
-                        {% if job.last_date %}<b>अतिमम तारीख:</b> {{ job.last_date }}{% endif %}
+                        {% if job.last_date %}<b>अंतिम तारीख:</b> {{ job.last_date }}{% endif %}
                     </div>
                     <div class="links">
                         {% if job.notification_link %}
-                            <a href="{{ job.notification_link }}" target="_blank">📄 Official Notification</a>
+                            <a href="{{ job.notification_link }}" target="_blank">📄 PDF Notification</a>
                         {% endif %}
                         {% if job.apply_link %}
                             <a href="{{ job.apply_link }}" target="_blank" class="apply">🌐 Online Apply</a>
@@ -51,12 +71,42 @@
                 </div>
                 {% endfor %}
             {% else %}
-                <p style="text-align: center; color: #64748b;">सध्या कोणतीही नवीन नोटीस उपलब्ध नाही.</p>
+                <div class="job-card" style="border-left-color: #94a3b8; color: #64748b;">सध्या कोणतीही नवीन नोटीस नाही.</div>
             {% endif %}
+
+            <a href="/admin" class="admin-link">⚙️ Admin Portal Login</a>
         </div>
 
-        <a href="/admin" class="admin-link">⚙️ Admin Portal Login</a>
+        <div class="sidebar-section">
+            <div class="section-title">📖 Download Anil Sir ITI App</div>
+            <p style="font-size: 13px; color: #475569;"><b>Courses:</b> CITS, Railway ALP, Technician, Group D, ISRO, ITI Competitive</p>
+            <p style="font-size: 13px; color: #475569;"><b>Features:</b> Full Mock Test, Section Test, Previous PDFs</p>
+            <p style="font-size: 13px; color: #475569;"><b>Course Fee:</b> ₹49 to ₹149</p>
+        </div>
     </div>
+
+    <div class="dashboard-container">
+        <div class="dashboard-badge">📁 Recruitment Dashboard</div>
+        
+        <div class="grid-box">
+            <a href="#" class="card-item"><span class="card-icon">💼</span><h3>Latest Recruitment</h3></a>
+            <a href="#" class="card-item"><span class="card-icon">🚆</span><h3>Railway Apprentice</h3></a>
+            <a href="#" class="card-item"><span class="card-icon">🎓</span><h3>Latest Apprentice</h3></a>
+            <a href="#" class="card-item"><span class="card-icon">🏛️</span><h3>Latest Campus Placement</h3></a>
+            <a href="#" class="card-item"><span class="card-icon">📊</span><h3>Merit List / Result</h3></a>
+            <a href="#" class="card-item"><span class="card-icon">🔑</span><h3>Answer Key</h3></a>
+            <a href="#" class="card-item"><span class="card-icon">🪪</span><h3>Admit Card</h3></a>
+            <a href="#" class="card-item"><span class="card-icon">📖</span><h3>Syllabus</h3></a>
+            <a href="#" class="card-item"><span class="card-icon">📚</span><h3>Exam Books</h3></a>
+            <a href="#" class="card-item"><span class="card-icon">🏛️</span><h3>Admissions</h3></a>
+            <a href="#" class="card-item"><span class="card-icon">📈</span><h3>Cut Off</h3></a>
+            <a href="#" class="card-item"><span class="card-icon">📅</span><h3>Upcoming Vacancies</h3></a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Latest Govt Jobs Portal. All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>
