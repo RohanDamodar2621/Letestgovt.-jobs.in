@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Portal - Latest Govt Jobs</title>
+    <title>Admin Portal - Job Details</title>
     <style>
         body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f8fafc; margin: 0; padding: 20px; }
-        .container { max-width: 700px; margin: 30px auto; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        .container { max-width: 800px; margin: 20px auto; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
         h2 { color: #1a2b4c; text-align: center; }
-        .form-group { margin-bottom: 15px; }
-        label { display: block; font-weight: bold; margin-bottom: 5px; color: #333; }
-        input[type="text"], input[type="password"], select { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; box-sizing: border-box; }
-        button { background: #2563eb; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 6px; cursor: pointer; font-weight: bold; width: 100%; }
+        .form-group { margin-bottom: 12px; }
+        label { display: block; font-weight: bold; margin-bottom: 4px; color: #333; font-size: 13px; }
+        input[type="text"], input[type="password"], select { width: 100%; padding: 8px 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; box-sizing: border-box; }
+        button { background: #2563eb; color: white; border: none; padding: 10px 20px; font-size: 15px; border-radius: 6px; cursor: pointer; font-weight: bold; width: 100%; margin-top: 10px; }
         button:hover { background: #1d4ed8; }
         .error { color: #dc2626; text-align: center; font-weight: bold; margin-bottom: 10px; }
         .notice-list { margin-top: 30px; }
@@ -28,7 +28,7 @@
             <h2>🔐 Admin Login</h2>
             {% if error %}
                 <div class="error">{{ error }}</div>
-            {% endif %}
+            {% and error %}
             <form method="POST">
                 <div class="form-group">
                     <label>Username:</label>
@@ -38,27 +38,59 @@
                     <label>Password:</label>
                     <input type="password" name="password" required>
                 </div>
-                <button type="submit">λογin (प्रवेश करा)</button>
+                <button type="submit">प्रवेश करा (Login)</button>
             </form>
-            <a href="/" class="back-link">🌐 मुख्य वेबसाईटवर जा (Home)</a>
+            <a href="/" class="back-link">🌐 मुख्य वेबसाईटवर जा</a>
         
         {% else %}
             <a href="/logout" class="logout-btn">बाहेर पडा (Logout)</a>
-            <h2>⚙️ Job Portal Dashboard</h2>
+            <h2>⚙️ Add New Job / Update</h2>
             
             <form method="POST">
                 <div class="form-group">
-                    <label>जॉब किंवा नोटीसचे शीर्षक (Title):</label>
-                    <input type="text" name="title" placeholder="उदा. Railway ITI Apprentice 2026 Out" required>
+                    <label>जॉबचे शीर्षक (Title):</label>
+                    <input type="text" name="title" placeholder="उदा. ISRO Propulsion Complex Recruitment 2026" required>
                 </div>
                 <div class="form-group">
-                    <label>विभाग (Category):</label>
+                    <label>संस्था / विभाग (Organization):</label>
+                    <input type="text" name="organization" placeholder="उदा. ISRO | DEPARTMENT OF SPACE">
+                </div>
+                <div class="form-group">
+                    <label>जाहिरात क्रमांक (Advertisement No.):</label>
+                    <input type="text" name="advt_no" placeholder="उदा. IPRC/RMT/2026/01">
+                </div>
+                <div class="form-group">
+                    <label>एकूण पदे (Total Vacancies):</label>
+                    <input type="text" name="total_vacancies" placeholder="उदा. 22 पद">
+                </div>
+                <div class="form-group">
+                    <label>जाहिरात दिनांक (Advt Date):</label>
+                    <input type="text" name="advt_date" placeholder="उदा. 12 सप्टेंबर 2026">
+                </div>
+                <div class="form-group">
+                    <label>अर्ज सुरू होण्याची तारीख (Start Date):</label>
+                    <input type="text" name="start_date" placeholder="उदा. 15 सप्टेंबर 2026">
+                </div>
+                <div class="form-group">
+                    <label>अिमम तारीख (Last Date):</label>
+                    <input type="text" name="last_date" placeholder="उदा. 5 ऑक्टोबर 2026">
+                </div>
+                <div class="form-group">
+                    <label>अधिकृत पीडीएफ लिंक (Notification PDF Link):</label>
+                    <input type="text" name="notification_link" placeholder="PDF URL टाका">
+                </div>
+                <div class="form-group">
+                    <label>ऑनलाइन अर्ज लिंक (Apply Link):</label>
+                    <input type="text" name="apply_link" placeholder="Official Website URL टाका">
+                </div>
+                <div class="form-group">
+                    <label>कुठे दाखवायचे? (Category):</label>
                     <select name="category">
-                        <option value="Notice">Notice Board Update</option>
+                        <option value="Notice">Notice Board</option>
                         <option value="Recruitment">Recruitment Dashboard</option>
                     </select>
                 </div>
-                <button type="submit">➕ नवीन जॉब पोस्ट करा</button>
+                <button type="submit">➕ सविस्तर माहिती सबमिट करा</button>
             </form>
 
             <a href="/" class="back-link" style="float: left;">🌐 मुख्य वेबसाईट पहा</a>
@@ -66,10 +98,10 @@
 
             <div class="notice-list">
                 <h3>सध्याच्या पोस्ट्स (Manage Posts):</h3>
-                {% for notice in notices %}
+                {% for job in jobs %}
                 <div class="notice-row">
-                    <span>{{ notice.title }}</span>
-                    <a href="/delete/{{ notice.id }}" class="delete-btn">डिलिट करा</a>
+                    <span>{{ job.title }}</span>
+                    <a href="/delete/{{ job.id }}" class="delete-btn">डिलिट करा</a>
                 </div>
                 {% endfor %}
             </div>
