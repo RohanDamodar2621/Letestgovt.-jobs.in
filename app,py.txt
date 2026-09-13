@@ -1,0 +1,10 @@
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "<h1>Welcome to Leave Portal</h1><p>Portal is active and running successfully!</p>"
+
+if __name__ == '__main__':
+    app.run(debug=True)
