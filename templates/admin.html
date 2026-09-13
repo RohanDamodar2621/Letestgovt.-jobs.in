@@ -3,54 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel - ITI Job Portal</title>
+    <title>Admin Portal - Latest Govt Jobs</title>
     <style>
         body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f8fafc; margin: 0; padding: 20px; }
-        .container { max-width: 700px; margin: 0 auto; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        .container { max-width: 700px; margin: 30px auto; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
         h2 { color: #1a2b4c; text-align: center; }
         .form-group { margin-bottom: 15px; }
         label { display: block; font-weight: bold; margin-bottom: 5px; color: #333; }
-        input[type="text"], select { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; box-sizing: border-box; }
+        input[type="text"], input[type="password"], select { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; box-sizing: border-box; }
         button { background: #2563eb; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 6px; cursor: pointer; font-weight: bold; width: 100%; }
         button:hover { background: #1d4ed8; }
+        .error { color: #dc2626; text-align: center; font-weight: bold; margin-bottom: 10px; }
         .notice-list { margin-top: 30px; }
         .notice-row { display: flex; justify-content: space-between; align-items: center; background: #f1f5f9; padding: 10px 15px; margin-bottom: 8px; border-radius: 6px; font-size: 14px; }
         .delete-btn { background: #dc2626; color: white; padding: 5px 10px; text-decoration: none; border-radius: 4px; font-size: 12px; font-weight: bold; }
-        .delete-btn:hover { background: #b91c1c; }
+        .logout-btn { background: #64748b; float: right; padding: 5px 12px; color: white; text-decoration: none; border-radius: 4px; font-size: 13px; }
         .back-link { display: block; text-align: center; margin-top: 20px; color: #2563eb; text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h2>⚙️ Job Portal Admin Panel</h2>
+        {% if not logged_in %}
+            <h2>🔐 Admin Login</h2>
+            {% if error %}
+                <div class="error">{{ error }}</div>
+            {% endif %}
+            <form method="POST">
+                <div class="form-group">
+                    <label>Username:</label>
+                    <input type="text" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label>Password:</label>
+                    <input type="password" name="password" required>
+                </div>
+                <button type="submit">λογin (प्रवेश करा)</button>
+            </form>
+            <a href="/" class="back-link">🌐 मुख्य वेबसाईटवर जा (Home)</a>
         
-        <form method="POST">
-            <div class="form-group">
-                <label>जॉब किंवा नोटीसचे शीर्षक (Title):</label>
-                <input type="text" name="title" placeholder="उदा. Railway ITI Apprentice 2026 Out" required>
-            </div>
-            <div class="form-group">
-                <label>विभाग (Category):</label>
-                <select name="category">
-                    <option value="Notice">Notice Board Update</option>
-                    <option value="Recruitment">Recruitment Dashboard</option>
-                </select>
-            </div>
-            <button type="submit">➕ नवीन जॉब पोस्ट करा</button>
-        </form>
+        {% else %}
+            <a href="/logout" class="logout-btn">बाहेर पडा (Logout)</a>
+            <h2>⚙️ Job Portal Dashboard</h2>
+            
+            <form method="POST">
+                <div class="form-group">
+                    <label>जॉब किंवा नोटीसचे शीर्षक (Title):</label>
+                    <input type="text" name="title" placeholder="उदा. Railway ITI Apprentice 2026 Out" required>
+                </div>
+                <div class="form-group">
+                    <label>विभाग (Category):</label>
+                    <select name="category">
+                        <option value="Notice">Notice Board Update</option>
+                        <option value="Recruitment">Recruitment Dashboard</option>
+                    </select>
+                </div>
+                <button type="submit">➕ नवीन जॉब पोस्ट करा</button>
+            </form>
 
-        <a href="/" class="back-link">🌐 मुख्य वेबसाईट पहा (Home)</a>
+            <a href="/" class="back-link" style="float: left;">🌐 मुख्य वेबसाईट पहा</a>
+            <div style="clear: both;"></div>
 
-        <div class="notice-list">
-            <h3>सध्याच्या पोस्ट्स (Manage Posts):</h3>
-            {% for notice in notices %}
-            <div class="notice-row">
-                <span>{{ notice.title }}</span>
-                <a href="/delete/{{ notice.id }}" class="delete-btn">डिलिट करा</a>
+            <div class="notice-list">
+                <h3>सध्याच्या पोस्ट्स (Manage Posts):</h3>
+                {% for notice in notices %}
+                <div class="notice-row">
+                    <span>{{ notice.title }}</span>
+                    <a href="/delete/{{ notice.id }}" class="delete-btn">डिलिट करा</a>
+                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
-        </div>
+        {% endif %}
     </div>
 
 </body>
