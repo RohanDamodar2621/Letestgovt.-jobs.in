@@ -1,79 +1,72 @@
-<!DOCTYPE html>
-<html lang="mr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Latest ITI & Govt Jobs Portal</title>
-    <style>
-        body { font-family: Arial, sans-serif; background-color: #f4f6f9; margin: 0; padding: 0; }
-        
-        /* Top Navigation Bar */
-        .navbar { background-color: #6f42c1; display: flex; flex-wrap: wrap; align-items: center; padding: 10px 20px; color: white; }
-        .navbar a { color: white; text-decoration: none; padding: 10px 15px; font-weight: bold; font-size: 14px; text-transform: uppercase; }
-        .navbar a:hover { background-color: #593196; border-radius: 4px; }
-        
-        /* Container */
-        .container { max-width: 1100px; margin: 20px auto; padding: 0 15px; display: flex; gap: 20px; flex-wrap: wrap; }
-        
-        /* Notice Board Section */
-        .notice-board { flex: 2; min-width: 300px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .notice-header { font-size: 20px; font-weight: bold; color: #333; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        .notice-list { list-style: none; padding: 0; margin: 0; }
-        .notice-item { padding: 12px 10px; border-bottom: 1px solid #eee; font-size: 15px; display: flex; align-items: center; border-left: 4px solid #6f42c1; margin-bottom: 8px; background: #fdfdfd; }
-        .notice-item a { color: #333; text-decoration: none; font-weight: 500; }
-        .notice-item a:hover { color: #6f42c1; }
+<style>
+    .dashboard-container {
+        max-width: 1000px;
+        margin: 20px auto;
+        padding: 10px;
+    }
+    .dashboard-title {
+        background: #112233;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 30px;
+        display: inline-block;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    .grid-box {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+    }
+    .card-item {
+        background: white;
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        text-decoration: none;
+        color: #333;
+        transition: 0.3s;
+        border-top: 4px solid #004085;
+    }
+    .card-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+    .card-item h3 {
+        margin: 10px 0 0 0;
+        font-size: 16px;
+        color: #004085;
+    }
+</style>
 
-        /* Sidebar Section */
-        .sidebar { flex: 1; min-width: 250px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .sidebar h3 { margin-top: 0; color: #6f42c1; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        .sidebar ul { list-style-type: square; padding-left: 20px; color: #555; }
-        .sidebar li { margin-bottom: 10px; }
-    </style>
-</head>
-<body>
-
-    <!-- Top Navigation Bar (फोटोप्रमाणे) -->
-    <nav class="navbar">
-        <a href="#">🏠 Home</a>
-        <a href="#">Group D Mock Test</a>
-        <a href="#">Career</a>
-        <a href="#">Exam Paper ▼</a>
-        <a href="#">ITI Updates ▼</a>
-        <a href="#">Answer Key</a>
-        <a href="#">Admit Card</a>
-        <a href="#">Result</a>
-        <a href="#">Performa ▼</a>
-        <a href="#">Apprentice News</a>
-    </nav>
-
-    <!-- Main Content -->
-    <div class="container">
-        
-        <!-- Notice Board (फोटोप्रमाणे) -->
-        <div class="notice-board">
-            <div class="notice-header">
-                📢 Notice Board
-            </div>
-            <ul class="notice-list">
-                <li class="notice-item"><a href="#">AVNL Answer Key 2026 Official Out</a></li>
-                <li class="notice-item"><a href="#">ISRO SDSC Answer key 2026 Out</a></li>
-                <li class="notice-item"><a href="#">ISRO IPRC Recruitment 2026 Full Notification Out</a></li>
-                <li class="notice-item"><a href="#">ISRO ISTRAC Admit Card 2026</a></li>
-                <li class="notice-item"><a href="#">MECL Non Executive Recruitment 2026 Out</a></li>
-            </ul>
-        </div>
-
-        <!-- Right Side Sidebar -->
-        <div class="sidebar">
-            <h3>📱 Download Courses</h3>
-            <ul>
-                <li><b>Courses:</b> CITS, Railway, ISRO, ITI Competitive (DFCCIL, etc.)</li>
-                <li><b>Features:</b> Full Mock Tests, Previous Year PDFs (Hindi & English)</li>
-                <li><b>Course Fee:</b> ₹49 to ₹199</li>
-            </ul>
-        </div>
-
+<div class="dashboard-container">
+    <div class="dashboard-title">📁 Recruitment Dashboard</div>
+    
+    <div class="grid-box">
+        <a href="#" class="card-item">
+            <h3>Latest Recruitment</h3>
+        </a>
+        <a href="#" class="card-item">
+            <h3>Railway Apprentice</h3>
+        </a>
+        <a href="#" class="card-item">
+            <h3>Latest Apprentice</h3>
+        </a>
+        <a href="#" class="card-item">
+            <h3>Latest Campus Placement</h3>
+        </a>
+        <a href="#" class="card-item">
+            <h3>Merit List / Result</h3>
+        </a>
+        <a href="#" class="card-item">
+            <h3>Answer Key</h3>
+        </a>
+        <a href="#" class="card-item">
+            <h3>Admit Card</h3>
+        </a>
+        <a href="#" class="card-item">
+            <h3>Syllabus</h3>
+        </a>
     </div>
-
-</body>
-</html>
+</div>
